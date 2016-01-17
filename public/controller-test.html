@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body ng-app="controllerTest">
+	<main ng-controller="CartController as cart">
+		<form name="cartForm">
+			<label for="name">Name</label>
+			<input type="text" name="name" ng-model="cart.newItem.name">
+			<label for="price">Price</label>
+			<input type="text" name="price" ng-model="cart.newItem.price">
+			<button ng-click="cart.addItem()">Add Item to Cart</button>
+		</form>
+		<table>
+			<tr>
+				<td>Name</td>
+				<td>Price</td>
+				<td>Quantity</td>
+				<td>Total</td>
+			</tr>
+			<tr ng-repeat="item in cart.items">
+				<td>{{ item.name }}</td>
+				<td>{{ item.price | currency }}</td>
+				<td><input type="text" name="quantity" ng-model="item.quantity" value="{{ quantity }}"></td>
+				<td>{{ (item.quantity * item.price) | currency }}</td>
+			</tr>
+		</table>
+	</main>
+	<script type="text/javascript" src="/js/angular.min.js"></script>
+	<script type="text/javascript" src="/js/controllerTest.js"></script>
+</body>
+</html>

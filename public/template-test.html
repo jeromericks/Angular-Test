@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Template Test</title>
+	<link rel="stylesheet" type="text/css" href="/css/template-test.css">
+</head>
+<body ng-app="templateTest">
+	<ul>
+		<li ng-repeat="num in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]" ng-if="num % 3 == 0">{{ num }}</li>
+	</ul>
+
+	<ul>
+		<li ng-repeat="letter in ['A', 'B', 'C', 'D', 'E', 'F']">{{ letter | uppercase }}</li>
+	</ul>
+
+	<ul>
+		<li ng-repeat="letter in ['A', 'B', 'C', 'D', 'E', 'F']" ng-if="letter == 'A'">{{ letter | lowercase }}</li>
+	</ul>
+	
+	<ul>
+		<li ng-repeat="img in ['/img/angular.png', '/img/angularjs.png', '/img/square.png']"><img ng-src="{{ img }}"></li>
+	</ul>
+	
+
+	<script type="text/javascript" src="/js/angular.min.js"></script>
+	<script type="text/javascript" src="/js/templateTest.js"></script>
+</body>
+</html>
