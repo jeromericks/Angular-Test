@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Controller Test</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 <body ng-app="controllerTest">
-	<main ng-controller="CartController as cart">
+	<main ng-controller="CartController as cart" class="container">
 		<form name="cartForm">
 			<label for="name">Name</label>
-			<input type="text" name="name" ng-model="cart.newItem.name">
+			<input type="text" name="name" ng-model="cart.newItem.name" class="form-control">
 			<label for="price">Price</label>
-			<input type="text" name="price" ng-model="cart.newItem.price">
-			<button ng-click="cart.addItem()">Add Item to Cart</button>
+			<input type="text" name="price" ng-model="cart.newItem.price" class="form-control">
+			<button class="btn btn-primary" ng-click="cart.addItem()">Add Item to Cart</button>
 		</form>
-		<table>
+		<table class="table table-striped">
 			<tr>
 				<td>Name</td>
 				<td>Price</td>
